@@ -6,6 +6,7 @@
  ****************************************** */
 import './css/apps.css';
 import 'bootstrap';
+import '@fortawesome/fontawesome-free/js/all.min';
 import Apps from './modules/Apps';
 
 window.addEventListener('load', () => {
