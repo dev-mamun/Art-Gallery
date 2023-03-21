@@ -15,7 +15,7 @@ class Apps {
   fakeFn = () => {
     const str = 'This is fake function to fix linter error';
     str.toString();
-  }
+  };
 }
 
 export default Apps;

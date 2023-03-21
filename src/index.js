@@ -6,13 +6,15 @@
  ****************************************** */
 import './css/apps.css';
 import './scss/styles.scss';
-// Import all of Bootstrap's JS
-// import * as bootstrap from 'bootstrap'
 import 'bootstrap';
 import '@fortawesome/fontawesome-free/js/all.min';
 import Apps from './modules/Apps';
+import Involvement from './modules/Involvement';
 
 window.addEventListener('load', () => {
   const gallery = new Apps();
   gallery.fakeFn();
+  const $activity = new Involvement();
+  const data = $activity.getComments('129884');
+  console.log(data);
 });
