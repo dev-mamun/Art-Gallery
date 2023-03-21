@@ -1,0 +1,9 @@
+/********************************************
+ * Project: js-capstone
+ * File: apps.css
+ * Created: 3/21/23
+ * Author: Abdullah Al Mamun <mamun1214@gmail.com>
+ ********************************************/
+@import "bootstrap";
+@import "toastr";
+@import "style.css";
