@@ -20,7 +20,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Art Work',
+      title: 'Art Gallery',
       filename: 'index.html',
       template: 'src/index.html',
     }),

@@ -1,13 +1,14 @@
-import _ from 'lodash';
-// import './style.css';
+/** ****************************************
+ * Project: js-capstone
+ * File: index.js
+ * Created: 3/20/23
+ * Author: Abdullah Al Mamun <mamun1214@gmail.com>,Anita Sharma
+ ****************************************** */
+import './css/apps.css';
+import 'bootstrap';
+import Apps from './modules/Apps';
 
-function component() {
-  const element = document.createElement('div');
-
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  return element;
-}
-
-document.body.appendChild(component());
+window.addEventListener('load', () => {
+  const gallery = new Apps();
+  gallery.fakeFn();
+});
