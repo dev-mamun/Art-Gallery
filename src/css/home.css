@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h3 {
+  padding: 2rem 0 0;
+  text-align: center;
+}
+
+h1 {
+  color: #1a1a1d;
+}
+
+h3 {
+  color: #4e4e50;
+}
+
+#grid-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+#grid-view #card {
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+#grid-view #card #thumbnail {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border: 3px solid #4e4e50;
+}
+#grid-view #card #thumbnail img {
+  width: 15rem;
+  height: 15rem;
+}
+#grid-view #card #thumbnail #desc {
+  display: flex;
+  justify-content: space-between;
+}
+#grid-view #card #thumbnail #heart {
+  background: none;
+  border: none;
+  transition: 0.7s ease-in-out;
+}
+#grid-view #card #thumbnail #heart:hover {
+  font-size: 1.5rem;
+}
+#grid-view #card #thumbnail #comments,
+#grid-view #card #thumbnail #reservation {
+  padding: 0.5rem;
+  transition: 0.7s ease-in-out;
+}
+#grid-view #card #thumbnail #comments:hover,
+#grid-view #card #thumbnail #reservation:hover {
+  padding: 1rem;
+}/*# sourceMappingURL=home.css.map */
