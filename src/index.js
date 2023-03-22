@@ -6,8 +6,6 @@
  ****************************************** */
 import './css/home.css';
 import './css/apps.css';
-import './scss/styles.scss';
-import './css/style.css';
 import 'bootstrap';
 import '@fortawesome/fontawesome-free/js/all.min';
 import Apps from './modules/Apps';
@@ -38,8 +36,8 @@ const displayArtworks = async () => {
           <p>${title}</p>
           <button id="heart"><i class="fa-regular fa-heart"></i></button>
         </div>
-        <button id="comments">Comments</button>
-        <button id="reservation">Reservation</button>
+        <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="comments" data-id="${artwork.id}" class="btn btn-outline-success text-dark">Comments</button>
+        <button id="reservation" data-id="${artwork.id}" class="btn btn-outline-secondary text-dark">Reservation</button>
       </article>
     `;
     gridView.appendChild(artworksContainer);

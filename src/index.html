@@ -25,7 +25,8 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#Paintings">Painting <span id="painting-count"></span></a>
+                            <a class="nav-link" aria-current="page" href="#Paintings">Painting <span
+                                    id="painting-count"></span></a>
                             <!-- <span id="painting-count"></span> -->
                         </li>
                         <li class="nav-item">
@@ -54,15 +55,98 @@
                                 href="/docs/5.3/examples/navbar-fixed/">fixed top</a> examples.</p>
                     <p>At the smallest breakpoint, the collapse plugin is used to hide the links and show a menu button
                         to toggle the collapsed content.</p> -->
-                        <h1>Welcome to ART Gallery</h1>
-                        <h3>Define your creativity</h3>
-                    
-                        <section id="grid-view">
-                          <div id="artworks"></div>
-                        </section>
+                    <h1>Welcome to ART Gallery</h1>
+                    <h3>Define your creativity</h3>
+
+                    <section id="grid-view">
+                        <div id="artworks"></div>
+                    </section>
                 </div>
             </div>
         </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+             aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row d-flex justify-content-center align-items-center">
+                                <div class="col-12">
+                                    <img class="img-thumbnail mx-auto d-block"
+                                         src="https://www.artic.edu/iiif/2/120429fc-eac9-5684-bea4-c2e662ca632a/full/843,/0/default.jpg">
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center align-items-center">
+                                <div class="col-12 text-center">
+                                    <h4>Starry Night and the Astronauts</h4>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center align-items-center m-3">
+                                <div class="col-6">
+                                    Artist: Alma Thomas
+                                </div>
+                                <div class="col-6">
+                                    Origin: United States
+                                </div>
+                                <div class="col-6">
+                                    Gallery: Gallery 291
+                                </div>
+                                <div class="col-6">
+                                    Type: Painting
+                                </div>
+                            </div>
+
+                            <div class="row d-flex justify-content-center align-items-center">
+                                <div class="col-12 text-center">
+                                    <h5>Comments (2)</h5>
+                                </div>
+                                <div class="col-12">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">03/11/21 Alex: I'd love to buy it!</li>
+                                        <li class="list-group-item">03/11/21 Mamun: I love it.</li>
+                                        <li class="list-group-item">03/11/21 Mia: I love</li>
+                                        <li class="list-group-item">03/11/21 Alex: I'd love to buy it. how much it
+                                            cost
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center align-items-center">
+                                <div class="col-12 text-center">
+                                    <h5>Add Comment</h5>
+                                </div>
+                                <form class="row g-3">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Your Name</label>
+                                        <input type="text" class="form-control" id="name"
+                                               placeholder="example: Mamun">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="comment" class="form-label">
+                                            Your Insights
+                                        </label>
+                                        <textarea class="form-control" id="comment" placeholder="I'd love to buy it!"
+                                                  rows="3"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <button type="button" class="btn btn-success">Comment</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
                 <span class="mb-3 mb-md-0 text-muted">© 2023 Created by Microverse under CC license</span>
