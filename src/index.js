@@ -6,6 +6,7 @@
  ****************************************** */
 import './css/home.css';
 import './css/apps.css';
+import './css/style.css';
 // Import all of Bootstrap's JS
 // import * as bootstrap from 'bootstrap'
 import 'bootstrap';
