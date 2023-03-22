@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$color1: #1a1a1d;
+$color2: #4e4e50;
+$color3: #6f2232;
+$color4: #950740;
+$color5: #c3073f;
+
+h1,
+h3 {
+  padding: 2rem 0 0;
+  text-align: center;
+}
+
+h1 {
+  color: $color1;
+}
+
+h3 {
+  color: $color2;
+}
+
+#grid-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+
+  #artworks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+
+    #thumbnail {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+      border: 3px solid $color2;
+
+      img {
+        width: 15rem;
+        height: 15rem;
+      }
+
+      #desc {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #heart {
+        background: none;
+        border: none;
+        transition: 0.7s ease-in-out;
+
+        &:hover {
+          font-size: 1.5rem;
+        }
+      }
+
+      #comments,
+      #reservation {
+        padding: 0.5rem;
+        transition: 0.7s ease-in-out;
+
+        &:hover {
+          padding: 1rem;
+        }
+      }
+    }
+  }
+}
