@@ -4,8 +4,9 @@
  * Created: 3/20/23
  * Author: Abdullah Al Mamun <mamun1214@gmail.com>,Anita Sharma
  ****************************************** */
+import './css/home.css';
 import './css/apps.css';
-import './scss/styles.scss';
+// import './scss/styles.scss';
 // Import all of Bootstrap's JS
 // import * as bootstrap from 'bootstrap'
 import 'bootstrap';
