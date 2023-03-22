@@ -6,10 +6,12 @@
  ****************************************** */
 import HttpRequest from './HttpRequest';
 
+const toastr = require('toastr');
+
 class Involvement {
   #$request;
 
-  #baseUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
+  #baseUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/';
 
   #appId = 't1efvb5DXWdaedCYX6j5';
 
@@ -34,7 +36,7 @@ class Involvement {
   }
 
   getAppId = () => {
-    const $url = `${this.baseUrl}apps/`;
+    const $url = `${this.baseUrl}`;
     const $response = this.#$request.post($url);
     $response.then(($res) => {
       this.appId = $res;
@@ -44,10 +46,21 @@ class Involvement {
       });
   };
 
-  getComments = ($id) => {
-    const $url = `${this.baseUrl}${this.appId}`;
+  getComment = ($id) => {
+    const $url = `${this.baseUrl}${this.appId}/comments/?item_id=${$id}`;
     const $response = this.#$request.get($url);
     $response.then(($res) => console.log($res))
+      .catch(($error) => {
+        throw new Error($error);
+      });
+  };
+
+  saveComment = ($comments) => {
+    const $url = `${this.baseUrl}${this.appId}/comments/`;
+    const $response = this.#$request.post($url, $comments);
+    $response.then(($res) => {
+      toastr.success($res);
+    })
       .catch(($error) => {
         throw new Error($error);
       });
