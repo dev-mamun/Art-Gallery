@@ -13,6 +13,7 @@ import '@fortawesome/fontawesome-free/js/all.min';
 import Apps from './modules/Apps';
 import Involvement from './modules/Involvement';
 import fetchArtworks from './modules/artworks';
+import countItem from './modules/countItem';
 
 const gridView = document.getElementById('grid-view');
 
@@ -43,6 +44,10 @@ const displayArtworks = async () => {
     `;
     gridView.appendChild(artworksContainer);
   });
+  // code for displaying artworks
+  const paintingCount = countItem();
+  const paintingCountElem = document.getElementById('painting-count');
+  paintingCountElem.innerHTML = `(${paintingCount})`;
 };
 
 window.addEventListener('load', () => {
