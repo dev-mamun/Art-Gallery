@@ -24,14 +24,16 @@ h3 {
   justify-content: center;
   margin-top: 2rem;
 }
-#grid-view #card {
+
+#grid-view #artworks {
   width: 70%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
   align-items: center;
 }
-#grid-view #card #thumbnail {
+
+#grid-view #artworks #thumbnail {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -39,28 +41,34 @@ h3 {
   padding: 1rem;
   border: 3px solid #4e4e50;
 }
-#grid-view #card #thumbnail img {
+
+#grid-view #artworks #thumbnail img {
   width: 15rem;
   height: 15rem;
 }
-#grid-view #card #thumbnail #desc {
+
+#grid-view #artworks #thumbnail #desc {
   display: flex;
   justify-content: space-between;
 }
-#grid-view #card #thumbnail #heart {
+
+#grid-view #artworks #thumbnail #heart {
   background: none;
   border: none;
   transition: 0.7s ease-in-out;
 }
-#grid-view #card #thumbnail #heart:hover {
+
+#grid-view #artworks #thumbnail #heart:hover {
   font-size: 1.5rem;
 }
-#grid-view #card #thumbnail #comments,
-#grid-view #card #thumbnail #reservation {
+
+#grid-view #artworks #thumbnail #comments,
+#grid-view #artworks #thumbnail #reservation {
   padding: 0.5rem;
   transition: 0.7s ease-in-out;
 }
-#grid-view #card #thumbnail #comments:hover,
-#grid-view #card #thumbnail #reservation:hover {
+
+#grid-view #artworks #thumbnail #comments:hover,
+#grid-view #artworks #thumbnail #reservation:hover {
   padding: 1rem;
-}/*# sourceMappingURL=home.css.map */
+}
