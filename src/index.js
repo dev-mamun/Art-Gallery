@@ -15,6 +15,6 @@ window.addEventListener('load', () => {
   const gallery = new Apps();
   gallery.fakeFn();
   const $activity = new Involvement();
-  const data = $activity.getComments('129884');
-  console.log(data);
+  const data = $activity.getComments();
+  console.log('Index: ', data);
 });

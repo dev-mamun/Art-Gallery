@@ -26,20 +26,21 @@ class HttpRequest {
     return $promise;
   };
 
-  post = async ($url, $inputs) => {
-    const response = await fetch(
-      $url,
-      {
-        method: 'POST',
-        body: JSON.stringify($inputs), // string or object
-        headers: {
-          'Content-Type': 'application/json',
-        },
+  post = async ($url, $inputs = '') => {
+    const $obj = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
       },
-    );
+    };
+    if ($inputs !== '') {
+      $obj.body = JSON.stringify($inputs);
+    }
+    const response = await fetch($url, $obj);
     let $promise;
+    console.log(response);
     if (response.ok) {
-      const result = await response.json();
+      const result = await response.text();
       $promise = Promise.resolve(result);
     } else {
       $promise = Promise.reject(new Error(`HTTP error! Status: ${response.status}`));
