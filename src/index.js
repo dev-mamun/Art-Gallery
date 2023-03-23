@@ -12,6 +12,7 @@ import Apps from './modules/Apps';
 import fetchArtworks from './modules/artworks';
 import countItem from './modules/countItem';
 import updateArtworkLikes from './modules/artworkLikes';
+import getArtworkLikes from './modules/getArtWorkLikes';
 
 const gridView = document.getElementById('grid-view');
 
@@ -23,14 +24,14 @@ const displayArtworks = async ($gallery) => {
   const artworks = await fetchArtworks(artworkIds);
 
   const artworksContainer = document.getElementById('artworks');
-  artworks.forEach((artwork) => {
+  artworks.forEach(async (artwork) => {
     // Trim title if it is too long
     const title = artwork.title.length > maxTitleLength
       ? `${artwork.title.slice(0, maxTitleLength)}...`
       : artwork.title;
 
     artworksContainer.innerHTML += `
-      <article id="thumbnail">
+      <article id="thumbnail" data-artwork-id="${artwork.id}">
         <div class='image'><img src="${artwork.imageUrl}" alt="${artwork.title}"></div>
         <div id="desc">
           <p>${title}</p>
@@ -42,6 +43,12 @@ const displayArtworks = async ($gallery) => {
       </article>
     `;
     gridView.appendChild(artworksContainer);
+
+    // Display likes counts
+    const likesCount = await getArtworkLikes([artwork.id]);
+    const likesCountElem = document.querySelector(`[data-artwork-id="${artwork.id}"] .likes-count`);
+    const countLike = likesCount[0].likes;
+    likesCountElem.innerHTML = `${countLike} Likes`;
   });
 
   // Event listener for heart icon
