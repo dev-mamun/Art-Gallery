@@ -11,6 +11,7 @@ import '@fortawesome/fontawesome-free/js/all.min';
 import Apps from './modules/Apps';
 import fetchArtworks from './modules/artworks';
 import countItem from './modules/countItem';
+import updateArtworkLikes from './modules/artworkLikes';
 
 const gridView = document.getElementById('grid-view');
 
@@ -34,6 +35,7 @@ const displayArtworks = async ($gallery) => {
         <div id="desc">
           <p>${title}</p>
           <button id="heart"><i class="fa-regular fa-heart"></i></button>
+          <button id="solid-heart"><i class="fa-solid fa-heart"></i></button>
         </div>
         <button id="comments" data-id="${artwork.id}" data-image="${artwork.imageUrl}" class="btn btn-outline-success text-dark comment">Comments</button>
         <button id="reservation" data-id="${artwork.id}" data-image="${artwork.imageUrl}" class="btn btn-outline-secondary text-dark reservation">Reservation</button>
@@ -41,6 +43,21 @@ const displayArtworks = async ($gallery) => {
     `;
     gridView.appendChild(artworksContainer);
   });
+
+  // Event listener for heart icon
+  const heart = document.querySelectorAll('.heart');
+  heart.forEach((button) => {
+    button.addEventListener('click', async () => {
+      const solidHeart = button.nextElementSibling;
+      button.style.display = 'none';
+      solidHeart.style.display = 'block';
+
+      // Update artwork likes in API
+      const { artworkId } = button.closest('#thumbnail').dataset;
+      await updateArtworkLikes(artworkId, 1);
+    });
+  });
+
   // code for displaying artworks
   const paintingCount = countItem();
   const paintingCountElem = document.getElementById('painting-count');
