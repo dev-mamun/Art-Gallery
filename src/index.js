@@ -6,7 +6,6 @@
  ****************************************** */
 import './css/home.css';
 import './css/apps.css';
-import './css/style.css';
 import 'bootstrap';
 import '@fortawesome/fontawesome-free/js/all.min';
 import Apps from './modules/Apps';
