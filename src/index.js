@@ -9,17 +9,16 @@ import './css/apps.css';
 import 'bootstrap';
 import '@fortawesome/fontawesome-free/js/all.min';
 import Apps from './modules/Apps';
-import Involvement from './modules/Involvement';
 import fetchArtworks from './modules/artworks';
 import countItem from './modules/countItem';
 
 const gridView = document.getElementById('grid-view');
 
 // IDs of artworks to display
-const artworkIds = [43867, 43869, 62055, 44426, 27608, 39304];
+const artworkIds = [14572, 21934, 43869, 44426, 62323, 79586];
 const maxTitleLength = 20;
 
-const displayArtworks = async () => {
+const displayArtworks = async ($gallery) => {
   const artworks = await fetchArtworks(artworkIds);
 
   const artworksContainer = document.getElementById('artworks');
@@ -36,8 +35,8 @@ const displayArtworks = async () => {
           <p>${title}</p>
           <button id="heart"><i class="fa-regular fa-heart"></i></button>
         </div>
-        <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="comments" data-id="${artwork.id}" class="btn btn-outline-success text-dark">Comments</button>
-        <button id="reservation" data-id="${artwork.id}" class="btn btn-outline-secondary text-dark">Reservation</button>
+        <button id="comments" data-id="${artwork.id}" data-image="${artwork.imageUrl}" class="btn btn-outline-success text-dark comment">Comments</button>
+        <button id="reservation" data-id="${artwork.id}" data-image="${artwork.imageUrl}" class="btn btn-outline-secondary text-dark reservation">Reservation</button>
       </article>
     `;
     gridView.appendChild(artworksContainer);
@@ -46,13 +45,13 @@ const displayArtworks = async () => {
   const paintingCount = countItem();
   const paintingCountElem = document.getElementById('painting-count');
   paintingCountElem.innerHTML = `(${paintingCount})`;
+  $gallery.events();
 };
 
 window.addEventListener('load', () => {
-  displayArtworks();
   const gallery = new Apps();
-  gallery.fakeFn();
-  const $activity = new Involvement();
-  const data = $activity.getComments();
-  console.log('Index: ', data);
+  displayArtworks(gallery);
+  /*   const $activity = new Involvement();
+    const data = $activity.getComments();
+    console.log('Index: ', data); */
 });
