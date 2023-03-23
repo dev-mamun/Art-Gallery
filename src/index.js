@@ -6,19 +6,21 @@
  ****************************************** */
 import './css/home.css';
 import './css/apps.css';
+import './css/style.css';
+// Import all of Bootstrap's JS
+// import * as bootstrap from 'bootstrap'
 import 'bootstrap';
 import '@fortawesome/fontawesome-free/js/all.min';
-import Apps from './modules/Apps';
 import fetchArtworks from './modules/artworks';
 import countItem from './modules/countItem';
 
 const gridView = document.getElementById('grid-view');
 
 // IDs of artworks to display
-const artworkIds = [14572, 21934, 43869, 44426, 62323, 79586];
+const artworkIds = [43867, 43869, 62055, 44426, 27608, 39304];
 const maxTitleLength = 20;
 
-const displayArtworks = async ($gallery) => {
+const displayArtworks = async () => {
   const artworks = await fetchArtworks(artworkIds);
 
   const artworksContainer = document.getElementById('artworks');
@@ -29,14 +31,14 @@ const displayArtworks = async ($gallery) => {
       : artwork.title;
 
     artworksContainer.innerHTML += `
-      <article id="thumbnail">
+      <article id="thumbnail">  
         <div class='image'><img src="${artwork.imageUrl}" alt="${artwork.title}"></div>
         <div id="desc">
           <p>${title}</p>
           <button id="heart"><i class="fa-regular fa-heart"></i></button>
         </div>
-        <button id="comments" data-id="${artwork.id}" data-image="${artwork.imageUrl}" class="btn btn-outline-success text-dark comment">Comments</button>
-        <button id="reservation" data-id="${artwork.id}" data-image="${artwork.imageUrl}" class="btn btn-outline-secondary text-dark reservation">Reservation</button>
+        <button id="comments">Comments</button>
+        <button id="reservation">Reservation</button>
       </article>
     `;
     gridView.appendChild(artworksContainer);
@@ -45,13 +47,6 @@ const displayArtworks = async ($gallery) => {
   const paintingCount = countItem();
   const paintingCountElem = document.getElementById('painting-count');
   paintingCountElem.innerHTML = `(${paintingCount})`;
-  $gallery.events();
 };
 
-window.addEventListener('load', () => {
-  const gallery = new Apps();
-  displayArtworks(gallery);
-  /*   const $activity = new Involvement();
-    const data = $activity.getComments();
-    console.log('Index: ', data); */
-});
+window.addEventListener('load', displayArtworks);
