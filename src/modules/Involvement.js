@@ -49,9 +49,26 @@ class Involvement {
   getComment = ($id) => {
     const $url = `${this.baseUrl}${this.appId}/comments/?item_id=${$id}`;
     const $response = this.#$request.get($url);
-    $response.then(($res) => console.log($res))
-      .catch(($error) => {
-        throw new Error($error);
+
+    $response.then(($res) => {
+      const $comments = document.getElementById('comment-list');
+      $comments.children[1].children[0].innerHTML = '';
+      $comments.children[0].children[0].innerText = `Comments (${$res.length})`;
+      $res.forEach(($item) => {
+        const $date = new Date(`${$item.creation_date}`);
+        const $month = $date.getMonth();
+        const $day = $date.getDate();
+        const $year = $date.getFullYear();
+        const $li = document.createElement('li');
+        $li.className = 'list-group-item';
+        $li.textContent = `${$month}/${$day}/${$year} ${$item.username}: ${$item.comment}`;
+        $comments.children[1].children[0].appendChild($li);
+      });
+    })
+      .catch(() => {
+        const $comments = document.getElementById('comment-list');
+        $comments.children[0].children[0].innerText = 'Comments (0)';
+        $comments.children[1].children[0].innerHTML = '<li class="list-group-item">No Comment</li>';
       });
   };
 

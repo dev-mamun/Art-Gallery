@@ -38,7 +38,6 @@ class HttpRequest {
     }
     const response = await fetch($url, $obj);
     let $promise;
-    console.log(response);
     if (response.ok) {
       const result = await response.text();
       $promise = Promise.resolve(result);
