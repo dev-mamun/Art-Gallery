@@ -64,6 +64,19 @@ h3 {
         }
       }
 
+      .solid-heart {
+        background: none;
+        border: none;
+        transition: 0.7s ease-in-out;
+        color: red;
+        display: none;
+      }
+
+      .likes-count {
+        margin-top: -1.5rem;
+        text-align: right;
+      }
+
       #comments,
       #reservation {
         padding: 0.5rem;
