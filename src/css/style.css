@@ -4,7 +4,9 @@
 }
 
 body {
-  font-family: cursive;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .navbar-custom {
