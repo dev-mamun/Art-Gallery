@@ -36,7 +36,7 @@ const displayArtworks = async ($gallery) => {
         <div id="desc">
           <p>${title}</p>
           <button id="heart"><i class="fa-regular fa-heart"></i></button>
-          <button id="solid-heart"><i class="fa-solid fa-heart"></i></button>
+          <button class="solid-heart"><i class="fa-solid fa-heart"></i></button>
         </div>
         <button id="comments" data-id="${artwork.id}" data-image="${artwork.imageUrl}" class="btn btn-outline-success text-dark comment">Comments</button>
         <button id="reservation" data-id="${artwork.id}" data-image="${artwork.imageUrl}" class="btn btn-outline-secondary text-dark reservation">Reservation</button>

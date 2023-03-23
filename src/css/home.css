@@ -54,6 +54,13 @@ h3 {
 #grid-view #artworks #thumbnail #heart:hover {
   font-size: 1.5rem;
 }
+#grid-view #artworks #thumbnail .solid-heart {
+  background: none;
+  border: none;
+  transition: 0.7s ease-in-out;
+  color: red;
+  display: none;
+}
 #grid-view #artworks #thumbnail .likes-count {
   margin-top: -1.5rem;
   text-align: right;
