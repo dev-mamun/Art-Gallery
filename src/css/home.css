@@ -24,12 +24,14 @@ h3 {
   justify-content: center;
   margin-top: 2rem;
 }
+
 #grid-view #artworks {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
   align-items: center;
 }
+
 #grid-view #artworks #thumbnail {
   display: flex;
   flex-wrap: wrap;
@@ -38,22 +40,27 @@ h3 {
   padding: 1rem;
   border: 3px solid #4e4e50;
 }
+
 #grid-view #artworks #thumbnail img {
   width: 15rem;
   height: 15rem;
 }
+
 #grid-view #artworks #thumbnail #desc {
   display: flex;
   justify-content: space-between;
 }
+
 #grid-view #artworks #thumbnail #heart {
   background: none;
   border: none;
   transition: 0.7s ease-in-out;
 }
+
 #grid-view #artworks #thumbnail #heart:hover {
   font-size: 1.5rem;
 }
+
 #grid-view #artworks #thumbnail .solid-heart {
   background: none;
   border: none;
@@ -61,16 +68,19 @@ h3 {
   color: red;
   display: none;
 }
+
 #grid-view #artworks #thumbnail .likes-count {
   margin-top: -1.5rem;
   text-align: right;
 }
+
 #grid-view #artworks #thumbnail #comments,
 #grid-view #artworks #thumbnail #reservation {
   padding: 0.5rem;
   transition: 0.7s ease-in-out;
 }
+
 #grid-view #artworks #thumbnail #comments:hover,
 #grid-view #artworks #thumbnail #reservation:hover {
   padding: 1rem;
-}/*# sourceMappingURL=home.css.map */
+}

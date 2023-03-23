@@ -6,6 +6,7 @@
  ****************************************** */
 import './css/home.css';
 import './css/apps.css';
+import './css/style.css';
 import 'bootstrap';
 import '@fortawesome/fontawesome-free/js/all.min';
 import Apps from './modules/Apps';
@@ -38,6 +39,7 @@ const displayArtworks = async ($gallery) => {
           <button id="heart" class="heart"><i class="fa-regular fa-heart"></i></button>
           <button class="solid-heart"><i class="fa-solid fa-heart"></i></button>
         </div>
+        <div class="likes-count"></div>
         <button id="comments" data-id="${artwork.id}" data-image="${artwork.imageUrl}" class="btn btn-outline-success text-dark comment">Comments</button>
         <button id="reservation" data-id="${artwork.id}" data-image="${artwork.imageUrl}" class="btn btn-outline-secondary text-dark reservation">Reservation</button>
       </article>
