@@ -29,6 +29,8 @@
 > JavaScript project - API-based webapp,
 > using webpack and ES6 features, notably modules.
 
+[Click here for more details](https://drive.google.com/file/d/1LYydyYqSOkU87gT0mqQCmJSEh4yyvoad/view?usp=share_link)
+
 ### 🛠 Tech Stack <a name="tech-stack"></a>
 
 - HTML
