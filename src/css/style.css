@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.navbar-custom {
+  background-color: #3e3c3c;
+  font-family: inherit;
+  font-style: normal;
+  color: #fff;
+  width: 60%;
+}
+
+.navbar-custom .navbar-brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 100%;
+  color: inherit;
+}
+
+.navbar-custom .nav-link {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 133%;
+  color: inherit;
+}
