@@ -77,7 +77,4 @@ const displayArtworks = async ($gallery) => {
 window.addEventListener('load', () => {
   const gallery = new Apps();
   displayArtworks(gallery);
-  /*   const $activity = new Involvement();
-    const data = $activity.getComments();
-    console.log('Index: ', data); */
 });

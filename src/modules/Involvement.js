@@ -46,14 +46,19 @@ class Involvement {
       });
   };
 
-  getComment = ($id) => {
-    const $url = `${this.baseUrl}${this.appId}/comments/?item_id=${$id}`;
-    const $response = this.#$request.get($url);
+  countComment = ($item) => `Comments (${$item.length})`;
 
+  getComments = async ($id) => {
+    const $url = `${this.baseUrl}${this.appId}/comments/?item_id=${$id}`;
+    return this.#$request.get($url);
+  };
+
+  getComment = ($id) => {
+    const $response = this.getComments($id);
     $response.then(($res) => {
       const $comments = document.getElementById('comment-list');
       $comments.children[1].children[0].innerHTML = '';
-      $comments.children[0].children[0].innerText = `Comments (${$res.length})`;
+      $comments.children[0].children[0].innerText = this.countComment($res);
       $res.forEach(($item) => {
         const $date = new Date(`${$item.creation_date}`);
         const $month = $date.getMonth();
