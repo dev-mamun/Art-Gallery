@@ -4,7 +4,7 @@
  * Created: 3/23/23
  * Author: Abdullah Al Mamun <mamun1214@gmail.com>
  ****************************************** */
-import Involvement from './modules/Involvement';
+import Involvement from '../modules/Involvement';
 
 const $activity = new Involvement();
 
