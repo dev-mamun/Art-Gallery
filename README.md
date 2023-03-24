@@ -53,7 +53,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Live Demo Link](https://dev-mamun.github.io/js-capstone/dist/)
+[Live Demo Link](https://dev-mamun.github.io/Art-Gallery/dist/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
