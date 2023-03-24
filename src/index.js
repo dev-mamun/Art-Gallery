@@ -67,7 +67,8 @@ const displayArtworks = async ($gallery) => {
   });
 
   // code for displaying artworks
-  const paintingCount = countItem();
+  const artworksItem = gridView.querySelectorAll('#thumbnail');
+  const paintingCount = countItem(artworksItem);
   const paintingCountElem = document.getElementById('painting-count');
   paintingCountElem.innerHTML = `(${paintingCount})`;
   $gallery.events();
