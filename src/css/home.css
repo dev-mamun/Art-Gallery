@@ -32,7 +32,7 @@ h3 {
   align-items: center;
 }
 
-#grid-view #artworks #thumbnail {
+#grid-view #artworks .thumbnail {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -41,27 +41,27 @@ h3 {
   border: 3px solid #4e4e50;
 }
 
-#grid-view #artworks #thumbnail img {
+#grid-view #artworks .thumbnail img {
   width: 15rem;
   height: 15rem;
 }
 
-#grid-view #artworks #thumbnail #desc {
+#grid-view #artworks .thumbnail .desc {
   display: flex;
   justify-content: space-between;
 }
 
-#grid-view #artworks #thumbnail #heart {
+#grid-view #artworks .thumbnail .heart {
   background: none;
   border: none;
   transition: 0.7s ease-in-out;
 }
 
-#grid-view #artworks #thumbnail #heart:hover {
+#grid-view #artworks .thumbnail .heart:hover {
   font-size: 1.5rem;
 }
 
-#grid-view #artworks #thumbnail .solid-heart {
+#grid-view #artworks .thumbnail .solid-heart {
   background: none;
   border: none;
   transition: 0.7s ease-in-out;
@@ -69,18 +69,18 @@ h3 {
   display: none;
 }
 
-#grid-view #artworks #thumbnail .likes-count {
+#grid-view #artworks .thumbnail .likes-count {
   margin-top: -1.5rem;
   text-align: right;
 }
 
-#grid-view #artworks #thumbnail #comments,
-#grid-view #artworks #thumbnail #reservation {
+#grid-view #artworks .thumbnail .comment,
+#grid-view #artworks .thumbnail .reservation {
   padding: 0.5rem;
   transition: 0.7s ease-in-out;
 }
 
-#grid-view #artworks #thumbnail #comments:hover,
-#grid-view #artworks #thumbnail #reservation:hover {
+#grid-view #artworks .thumbnail .comment:hover,
+#grid-view #artworks .thumbnail .reservation:hover {
   padding: 1rem;
 }

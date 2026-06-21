@@ -36,7 +36,7 @@ h3 {
     gap: 3rem;
     align-items: center;
 
-    #thumbnail {
+    .thumbnail {
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
@@ -49,12 +49,12 @@ h3 {
         height: 15rem;
       }
 
-      #desc {
+      .desc {
         display: flex;
         justify-content: space-between;
       }
 
-      #heart {
+      .heart {
         background: none;
         border: none;
         transition: 0.7s ease-in-out;
@@ -77,8 +77,8 @@ h3 {
         text-align: right;
       }
 
-      #comments,
-      #reservation {
+      .comment,
+      .reservation {
         padding: 0.5rem;
         transition: 0.7s ease-in-out;
 

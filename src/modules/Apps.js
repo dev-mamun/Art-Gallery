@@ -138,8 +138,13 @@ class Apps {
     });
   };
 
-  saveComment = ($data) => {
-    this.#$activity.saveComment($data);
+  saveComment = async ($data) => {
+    try {
+      await this.#$activity.saveComment($data);
+      this.#$activity.getComment($data.item_id);
+    } catch ($error) {
+      toastr.error($error.message);
+    }
   };
 }
 
